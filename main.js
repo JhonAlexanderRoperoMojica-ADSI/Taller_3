@@ -1,16 +1,26 @@
-let contador = 1, calidad = 0;
+addEventListener("DOMContentLoaded", (e) => {
+    let formulario = document.getElementById('formulario');
+    formulario.addEventListener("submit", (e) => {
+        e.preventDefault();
+        let procesos = 10;
+        let contador = 1;
+        let suma, resta, divicion, multiplicacion;
 
-let cantidad = parseInt(prompt("ingrese la cantidad de las gallinas"));
+        while (contador <= procesos){
+            let numero1 = parseInt(prompt(`Ingrese el primer Numero: `));
+            let numero2 = parseInt(prompt("Ingrese el segundo Numero: "));
 
-while (contador <= cantidad) {
-    let peso = parseInt(prompt(`ingrese lel peso de las gallinas ${contador}`));
-    let altura = parseInt(prompt(`ingrese la altura de las gallinas ${contador}`));
-    let huevos = parseInt(prompt(`ingrese la cantidad de huevos de las gallinas ${contador}`));
-    calidad += (peso * altura) / huevos;
-    contador ++;
-}
+            suma = numero1 + numero2;
+            resta = numero1 - numero2;
+            divicion = numero1 / numero2;
+            multiplicacion = numero1 * numero2;
 
-let promedio = calidad * cantidad;
+            contador+= 1;
 
-alert(calidad);
-alert(promedio);
+            alert(suma);
+            alert(resta);
+            alert(divicion);
+            alert(multiplicacion);
+        }
+    })
+})
