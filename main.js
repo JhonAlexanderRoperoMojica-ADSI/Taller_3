@@ -2,18 +2,20 @@ addEventListener("DOMContentLoaded", (e) => {
     let formulario = document.getElementById('formulario');
     formulario.addEventListener("submit", (e) => {
         e.preventDefault();
-        let estudiantes = 5;
-        let contador = 1;
+        let perosnas = 40;
+        let mujeres = 1;
+        let hombres = 7;
+        let suma = 0;
 
-        while (contador <= estudiantes){
-            let nombre = prompt(`Ingrese el nombre del estudiante ${contador}`);
-            let apellido = prompt(`Ingrese el apellido del estudiante ${contador}`);
-            let edad = parseInt(prompt(`Ingrese la edad del estudiante ${contador}`));
-            let promedio = parseFloat(prompt(`Ingrese el promedio del estudiante ${contador}`));
+        while (suma <= perosnas){
+            suma = mujeres + hombres;
+            mujeres+= 1;
+            hombres+= 1;
 
-            contador+= 1;
-
-            alert(`el promedio del estudiante llamado: ${nombre} es: ${promedio}`);
+            alert(`La cantidad de mujeres es: ${mujeres}`);
+            alert(`La cantidad de hombres es: ${hombres}`);
+            alert(`La cantidad total de mujeres es: ${mujeres}`);
+            alert(`Cantidad de personas totales es: ${suma}`);
         }
     })
 })
