@@ -1,28 +1,27 @@
 addEventListener("DOMContentLoaded", (e) => {
     let formulario = document.getElementById('formulario');
     formulario.addEventListener("submit", (e) => {
-        let vendedor = parseInt(prompt("ingrese la cantidad de vendedores"));
+        let alumnos = parseInt(prompt("DIGITE LA CANTIDAD DE ALUMNOS: "));
         let contador = 1;
-
-        while (contador <= vendedor) {
-            let sueldo = parseFloat(prompt("digite el sueldo"));
-            let Venta1 = parseFloat(prompt("ingrese la venta 1"));
-            let comision1 = Venta1 * 0.1;
-            let suma1 = Venta1 + comision1;
-            let Venta2 = parseFloat(prompt("ingrese la venta 2"));
-            let comision2 = Venta2 * 0.1;
-            let suma2 = Venta2 + comision2;
-            let Venta3 = parseFloat(prompt("ingrese la venta 3"));
-            let comision3 = Venta3 * 0.1;
-            let suma3 = Venta3 + comision3;
-            let total = suma1 + suma2 + suma3;
-            let Total_sueldo = sueldo + total
-
-            alert(`El sueldo del empleado es: ${sueldo}`);
-            alert(`Vendio un total de comiciones de: ${total}`);
-            alert(`El sueldo del empleado total es: ${Total_sueldo}`);
+        while (contador <= alumnos) {
             
+            let creditos1 = parseInt(prompt(`DIGITE LOS CREDITOS DE LA MATERIA FUNDAMENTO: ${contador} `));
+            let nota1 = parseFloat(prompt(`DIGITE LA NOTA DE LA MATERIA FUNDAMENTO: ${contador}`));
+
+            let creditos2 = parseInt(prompt(`DIGITE LOS CREDITOS DE LA MATERIA BD: ${contador}`));
+            let nota2 = parseFloat(prompt(`DIGITE LA NOTA DE LA MATERIA BD: ${contador}`));
+
+            let creditos3 = parseInt(prompt(`DIGITE LOS CREDITOS DE LA MATERIA ÉTICA: ${contador}`));
+            let nota3 = parseFloat(prompt(`DIGITE LA NOTA DE LA MATERIA ÉTICA: ${contador}`));
+            
+            let final = (creditos1 * nota1) + (creditos2 * nota2) + (creditos3 * nota3);
+            let prom_materias = (nota1 + nota2 + nota3) / 3;
+            let total_final = final + prom_materias;
+            let suma_creditos = creditos1 + creditos2 + creditos3;
+            let total_nota = total_final / suma_creditos;
             contador ++;
+            
+            alert(`El promedio del estudiante es: ${total_nota}`);
         }
     })
 })
